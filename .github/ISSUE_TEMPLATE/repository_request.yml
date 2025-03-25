@@ -14,12 +14,18 @@ body:
     validations:
       required: true
 
-  - type: textarea
+  - type: checkboxes
     id: repo_names
     attributes:
-      label: "📌 List of Repository Names"
-      description: "Enter exactly the same number of repository names as mentioned above (one per line)."
-      placeholder: "repo-one\nrepo-two\nrepo-three"
+      label: "📌 Select Repository Names"
+      description: "Enter exactly the same number of repository names as mentioned above."
+      options:
+        - label: "repo-one"
+        - label: "repo-two"
+        - label: "repo-three"
+        - label: "repo-four"
+        - label: "repo-five"
+        - label: "Other (mention in comments)"
     validations:
       required: true
 
