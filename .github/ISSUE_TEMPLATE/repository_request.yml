@@ -1,0 +1,48 @@
+name: "Repository Creation Request"
+description: "Request to create one or more repositories with specific configurations."
+title: "[Repo Request] - *<Provide a short description>*"
+labels: ["repository-request"]
+assignees: ["github-admin"]
+
+body:
+  - type: input
+    id: repo_count
+    attributes:
+      label: "📊 Number of Repositories"
+      description: "Enter the number of repositories you want to create."
+      placeholder: "Example: 3"
+    validations:
+      required: true
+
+  - type: textarea
+    id: repo_names
+    attributes:
+      label: "📌 List of Repository Names"
+      description: "Enter exactly the same number of repository names as mentioned above (one per line)."
+      placeholder: "repo-one\nrepo-two\nrepo-three"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: visibility
+    attributes:
+      label: "🔒 Repository Visibility"
+      description: "Select the visibility of the repositories."
+      options:
+        - Private
+        - Public
+        - Internal
+    validations:
+      required: true
+
+  - type: textarea
+    id: teams_access
+    attributes:
+      label: "👥 Team Access Configuration"
+      description: "Specify the teams and their permissions in the following format: `<team>:<permission>` (one per line). Available permissions: `read`, `write`, `admin`, `triage`, `maintain`."
+      placeholder: |
+        dev-team:write
+        qa-team:read
+        admins:admin
+    validations:
+      required: true
